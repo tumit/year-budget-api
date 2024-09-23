@@ -1,0 +1,3 @@
+###
+GET http://localhost:3001/budget/2023
+X-Auth-Token : peaxodds2024

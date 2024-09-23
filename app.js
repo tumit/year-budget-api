@@ -4,6 +4,44 @@ const port = process.env.PORT || 3001;
 
 app.get("/", (req, res) => res.type('html').send(html));
 
+
+app.get("/budget/:year", (req, res) => {
+
+  const token = req.headers['x-auth-token']
+
+  if ('peaxodds2024' != token) {
+    res.status(401).jsonp({
+      "message": "Token verification failed"
+    });
+    return;
+  }
+
+  const year = req.params.year;
+
+  if (year == 2023) {
+    res.jsonp({
+      budget: {
+        year: 2023,
+        total: 100000
+      }
+    });
+    return;
+  }
+
+
+  if (year == 2024) {
+    res.jsonp({
+      budget: {
+        year: 2024,
+        total: 200000
+      }
+    });
+    return;
+  }
+
+
+});
+
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 server.keepAliveTimeout = 120 * 1000;
