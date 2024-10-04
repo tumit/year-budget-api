@@ -20,10 +20,8 @@ app.get("/budget/:year", (req, res) => {
 
   if (year == 2023) {
     res.jsonp({
-      budget: {
-        year: 2023,
-        total: 100000
-      }
+      year: 2023,
+      total: 100000
     });
     return;
   }
@@ -31,10 +29,8 @@ app.get("/budget/:year", (req, res) => {
 
   if (year == 2024) {
     res.jsonp({
-      budget: {
-        year: 2024,
-        total: 200000
-      }
+      year: 2024,
+      total: 200000
     });
     return;
   }
